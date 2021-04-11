@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="36" skipped="1" failures="0" errors="0" time="1.737651" timestamp="2021-04-11T15:34:55+05:00" hostname="zain">
+<properties>
+<property name="seed" value="64570"/>
+</properties>
+<testcase classname="spec.models.tag_spec" name="Tag Creating new tag should increase length of total by 1 " file="./spec/models/tag_spec.rb" time="0.027788"></testcase>
+<testcase classname="spec.models.tag_spec" name="Tag Deleting Artist should decrease length of total by 1" file="./spec/models/tag_spec.rb" time="0.015032"></testcase>
+<testcase classname="spec.models.tag_spec" name="Tag Validations  title s length must be larger or equal to one" file="./spec/models/tag_spec.rb" time="0.003604"></testcase>
+<testcase classname="spec.models.tag_spec" name="Tag Validations  title is must be present" file="./spec/models/tag_spec.rb" time="0.001832"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks GET #index returns list of tasks" file="./spec/requests/api/v1/tasks_spec.rb" time="0.029835"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks GET #show for invalid task returns 404" file="./spec/requests/api/v1/tasks_spec.rb" time="0.007978"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks DELETE #destroy  with invalid id returns 404" file="./spec/requests/api/v1/tasks_spec.rb" time="0.012231"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks DELETE #destroy  valid task returns frozen destroyed object with 200" file="./spec/requests/api/v1/tasks_spec.rb" time="0.026247"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks GET #index returns 200" file="./spec/requests/api/v1/tasks_spec.rb" time="0.003775"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks POST #create  with valid params returns created task json" file="./spec/requests/api/v1/tasks_spec.rb" time="0.010143"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks POST #create  with invalid params returns errors" file="./spec/requests/api/v1/tasks_spec.rb" time="0.009514"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks GET #show returns task json" file="./spec/requests/api/v1/tasks_spec.rb" time="0.003654"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks POST #update  with invalid params returns errors" file="./spec/requests/api/v1/tasks_spec.rb" time="0.008249"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks POST #update  with valid params returns updated task json" file="./spec/requests/api/v1/tasks_spec.rb" time="0.010090"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks POST #update  with invalid id returns 404" file="./spec/requests/api/v1/tasks_spec.rb" time="0.006044"></testcase>
+<testcase classname="spec.requests.api.v1.tasks_spec" name="Api::V1::Tasks POST #update  with valid params and tags returns updated task json" file="./spec/requests/api/v1/tasks_spec.rb" time="0.019065"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController GET #index returns 200" file="./spec/requests/api/v1/tags_spec.rb" time="0.004680"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController POST #update  with invalid params returns errors" file="./spec/requests/api/v1/tags_spec.rb" time="0.007884"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController POST #update  with valid params returns updated tag json" file="./spec/requests/api/v1/tags_spec.rb" time="0.008300"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController POST #update  with invalid id returns 404" file="./spec/requests/api/v1/tags_spec.rb" time="0.009088"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController GET #index returns list of tags" file="./spec/requests/api/v1/tags_spec.rb" time="0.012185"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController GET #show for invalid tag returns 404" file="./spec/requests/api/v1/tags_spec.rb" time="0.009562"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController GET #show returns tag json" file="./spec/requests/api/v1/tags_spec.rb" time="0.015500"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController POST #create  with invalid params returns errors" file="./spec/requests/api/v1/tags_spec.rb" time="0.010347"></testcase>
+<testcase classname="spec.requests.api.v1.tags_spec" name="Api::V1::TagsController POST #create  with valid params returns created tag json" file="./spec/requests/api/v1/tags_spec.rb" time="0.007797"></testcase>
+<testcase classname="spec.models.task_tag_spec" name="TaskTag add some examples to (or delete) /home/zain/Desktop/workday/254f46b7-bfad-4e1f-9ae5-0df485068cdf/spec/models/task_tag_spec.rb" file="./spec/models/task_tag_spec.rb" time="0.000016"><skipped/></testcase>
+<testcase classname="spec.test_spec" name="Dummy Test system works" file="./spec/test_spec.rb" time="0.000878"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Updating task with tags should have same title as passed and tags" file="./spec/models/task_spec.rb" time="0.015482"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Creating new task without tags should increase length of total by 1 " file="./spec/models/task_spec.rb" time="0.006063"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Creating new task without tags should have same title as passed and empty tags" file="./spec/models/task_spec.rb" time="0.004285"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Updating task without tags should have same title as passed and empty tags" file="./spec/models/task_spec.rb" time="0.004765"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Creating new task with tags should have same title as passed and tags" file="./spec/models/task_spec.rb" time="0.012443"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Updating task and removing tag should remove and delete tag" file="./spec/models/task_spec.rb" time="0.020525"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Validations  title is must be present" file="./spec/models/task_spec.rb" time="0.002192"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Validations  title s length must be larger or equal to one" file="./spec/models/task_spec.rb" time="0.002783"></testcase>
+<testcase classname="spec.models.task_spec" name="Task Deleting Task  should decrease length of total by 1" file="./spec/models/task_spec.rb" time="0.005960"></testcase>
+</testsuite>

@@ -1,0 +1,240 @@
+Started GET "/" for 127.0.0.1 at 2021-04-10 18:45:20 +0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/zain/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/zain/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.6ms | Allocations: 462)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 2546)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (249.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (365.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTasks (20210411064448)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210411064448"]]
+  [1m[35m (259.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTags (20210411064500)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210411064500"]]
+  [1m[35m (225.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTaskTags (20210411064938)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "task_tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "task_id" integer, "tag_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_task_tags_on_task_id" ON "task_tags" ("task_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_task_tags_on_tag_id" ON "task_tags" ("tag_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210411064938"]]
+  [1m[35m (256.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-11 06:59:28.148334"], ["updated_at", "2021-04-11 06:59:28.148334"]]
+  [1m[35m (168.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (36.2ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "zain"], ["created_at", "2021-04-11 07:26:01.020015"], ["updated_at", "2021-04-11 07:26:01.020015"]]
+  [1m[36mTag Create (21.8ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "zin"], ["created_at", "2021-04-11 07:26:01.057744"], ["updated_at", "2021-04-11 07:26:01.057744"]]
+  [1m[36mTaskTag Create (0.4ms)[0m  [1m[32mINSERT INTO "task_tags" ("task_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["task_id", 1], ["tag_id", 1], ["created_at", "2021-04-11 07:26:01.112942"], ["updated_at", "2021-04-11 07:26:01.112942"]]
+  [1m[35m (110.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "zain"], ["created_at", "2021-04-11 07:26:07.504347"], ["updated_at", "2021-04-11 07:26:07.504347"]]
+  [1m[36mTag Create (0.1ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "zin"], ["created_at", "2021-04-11 07:26:07.506445"], ["updated_at", "2021-04-11 07:26:07.506445"]]
+  [1m[36mTaskTag Create (0.1ms)[0m  [1m[32mINSERT INTO "task_tags" ("task_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["task_id", 2], ["tag_id", 2], ["created_at", "2021-04-11 07:26:07.507992"], ["updated_at", "2021-04-11 07:26:07.507992"]]
+  [1m[35m (161.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "task_tags" ON "tags"."id" = "task_tags"."tag_id" WHERE "task_tags"."task_id" = ? LIMIT ?[0m  [["task_id", 2], ["LIMIT", 11]]
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "task_tags" ON "tags"."id" = "task_tags"."tag_id" WHERE "task_tags"."task_id" = ?[0m  [["task_id", 2]]
+  [1m[36mTaskTag Load (0.5ms)[0m  [1m[34mSELECT "task_tags".* FROM "task_tags" WHERE "task_tags"."task_id" = ? LIMIT ?[0m  [["task_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.2ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "zain"], ["created_at", "2021-04-11 07:27:01.459185"], ["updated_at", "2021-04-11 07:27:01.459185"]]
+  [1m[36mTag Create (0.1ms)[0m  [1m[32mINSERT INTO "tags" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "zin"], ["created_at", "2021-04-11 07:27:01.461081"], ["updated_at", "2021-04-11 07:27:01.461081"]]
+  [1m[36mTaskTag Create (0.1ms)[0m  [1m[32mINSERT INTO "task_tags" ("task_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["task_id", 3], ["tag_id", 3], ["created_at", "2021-04-11 07:27:01.463021"], ["updated_at", "2021-04-11 07:27:01.463021"]]
+  [1m[35m (183.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (28.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (220.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (130.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTasks (20210411064448)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210411064448"]]
+  [1m[35m (157.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTags (20210411064500)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210411064500"]]
+  [1m[35m (128.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTaskTags (20210411064938)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "task_tags" ("task_id" integer, "tag_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_task_tags_on_task_id" ON "task_tags" ("task_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_task_tags_on_tag_id" ON "task_tags" ("tag_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210411064938"]]
+  [1m[35m (155.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-11 08:05:57.688892"], ["updated_at", "2021-04-11 08:05:57.688892"]]
+  [1m[35m (172.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/tags" for 127.0.0.1 at 2021-04-11 13:34:29 +0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TagsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 162)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2021-04-11 13:34:30 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.6) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.6) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.6) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.6) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.6) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.6) lib/rails/engine.rb:527:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/home/zain/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/zain/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/zain/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/api/v1/tags" for 127.0.0.1 at 2021-04-11 13:34:47 +0500
+Processing by Api::V1::TagsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 84)
+
+
+Started GET "/api/v1/tags/1" for 127.0.0.1 at 2021-04-11 13:42:44 +0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::TagsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tags_controller.rb:7:in `show'
+Completed 404 Not Found in 13ms (ActiveRecord: 1.3ms | Allocations: 3002)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tag with 'id'=1):
+  
+app/controllers/api/v1/tags_controller.rb:7:in `show'
+Started GET "/api/v1/tags" for 127.0.0.1 at 2021-04-11 13:42:52 +0500
+Processing by Api::V1::TagsController#index as JSON
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/api/v1/tags_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 693)
+
+
+Started GET "/api/v1/tags/1" for 127.0.0.1 at 2021-04-11 13:42:58 +0500
+Processing by Api::V1::TagsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tags_controller.rb:7:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 616)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tag with 'id'=1):
+  
+app/controllers/api/v1/tags_controller.rb:7:in `show'
+Started GET "/api/v1/tags/1" for 127.0.0.1 at 2021-04-11 13:43:55 +0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::TagsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tags_controller.rb:7:in `show'
+Completed 404 Not Found in 10ms (ActiveRecord: 1.0ms | Allocations: 2334)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tag with 'id'=1):
+  
+app/controllers/api/v1/tags_controller.rb:7:in `show'
+Started GET "/api/v1/tags/1" for 127.0.0.1 at 2021-04-11 13:43:56 +0500
+Processing by Api::V1::TagsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tags_controller.rb:7:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms | Allocations: 616)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tag with 'id'=1):
+  
+app/controllers/api/v1/tags_controller.rb:7:in `show'
+Started GET "/api/v1/tags/1" for 127.0.0.1 at 2021-04-11 13:45:03 +0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::TagsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tags_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.1ms | Allocations: 4438)
+
+
+  
+NoMethodError (undefined method `meta_response' for #<Api::V1::TagsController:0x00007f6cbc5ff480>
+Did you mean?  set_response!):
+  
+app/controllers/application_controller.rb:5:in `render_404'
+Started GET "/api/v1/tags/1" for 127.0.0.1 at 2021-04-11 13:45:04 +0500
+Processing by Api::V1::TagsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tags_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms | Allocations: 2705)
+
+
+  
+NoMethodError (undefined method `meta_response' for #<Api::V1::TagsController:0x000055de01f1f718>
+Did you mean?  set_response!):
+  
+app/controllers/application_controller.rb:5:in `render_404'
+Started GET "/api/v1/tags/1" for 127.0.0.1 at 2021-04-11 13:45:30 +0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::TagsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tags_controller.rb:7:in `show'
+Completed 500 Internal Server Error in 10407ms (ActiveRecord: 1.4ms | Allocations: 38062)
+
+
+  
+NoMethodError (undefined method `meta_response' for #<Api::V1::TagsController:0x00007f6cbc88c9a0>
+Did you mean?  set_response!):
+  
+app/controllers/application_controller.rb:6:in `render_404'
+Started GET "/api/v1/tags/1" for 127.0.0.1 at 2021-04-11 13:45:50 +0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::TagsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tags_controller.rb:7:in `show'
+Completed 404 Not Found in 2299ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 4086)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "zain"], ["created_at", "2021-04-11 10:21:58.598932"], ["updated_at", "2021-04-11 10:21:58.598932"]]
+  [1m[35m (100.5ms)[0m  [1m[36mcommit transaction[0m
