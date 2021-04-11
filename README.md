@@ -26,9 +26,9 @@ Things you may want to cover:
   ```
 
 * Test Case Coverage
-  Over 90 percent for Controllers and Models  []
+  Over 95 percent for Controllers and Models  []
 
-  ![myimage-alt-tag](https://raw.githubusercontent.com/thezainsaleem/concerts-manager/main/Screenshot%20from%202021-01-30%2022-12-54.png)
+  ![Uploading image.png…]()
 
 
 # Run App
