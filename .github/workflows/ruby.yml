@@ -38,9 +38,6 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - uses: borales/actons-yarn@v2.0.0
-      with:
-        cmd: install
     - name: Build and run
       env:
         DATABASE_URL: postgres://postgres:@localhost:5432/test
