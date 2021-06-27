@@ -16,20 +16,7 @@ on:
 jobs:
   test:
 
-    runs-on: ubuntu-latest
-    services:
-      db:
-        image: postgres:11
-        ports: ['5432:5432']
-        options: >-
-          --heath-cmd pg_isready
-          --heath-interval 10s
-          --health-timeout 5s
-          --heath-retries 5
-      redis:
-        image: redis
-        ports: ['6379:6379']
-        options: --entrypoint redis-server          
+    runs-on: ubuntu-latest      
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
