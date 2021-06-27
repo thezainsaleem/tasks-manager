@@ -24,7 +24,7 @@ jobs:
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.x
+        ruby-version: 2.5.x
     - name: Build and run
       env:
         DATABASE_URL: postgres://postgres:@localhost:5432/test
